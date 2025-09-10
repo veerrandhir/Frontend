@@ -14,7 +14,7 @@ function App() {
     let pass = "";
     let str = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
     if(numberAllowed) str += "1234567890";
-    if(charAllowed) str += "!@#$%^&*()"
+    if(charAllowed) str += "!@#$%^&*()_[]{}"
 
     // generate random password
     for(let i = 1; i<= length ; i++){
@@ -27,12 +27,14 @@ function App() {
 
   }, [length, numberAllowed, charAllowed, setPassword])
 
-  useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed, passwordGenerator])
+  useEffect(()=>{passwordGenerator()
+    
+  },[length, numberAllowed, charAllowed, passwordGenerator])
 
   return (
     
         <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-29 my-15 text-orange-700 bg-green-600 text-center my-4'> 
-          <h1>Password Generator</h1>
+          <h1 className='text-white text-center my-3'>Password Generator</h1>
           <div className='flex shadow rounded-lg overflow-hidden mb-4' > <input type= "Text "
           value={password}
           className='outline-none w-full py-1 px-3'
@@ -74,7 +76,7 @@ function App() {
               
               defaultChecked = {charAllowed}
               id='characterInput'
-              onChange={()=>{
+              onChange={(e)=>{
                 setCharAllowed((prev)=>!prev)
               }}
               
