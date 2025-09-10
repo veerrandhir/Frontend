@@ -18,8 +18,8 @@ function App() {
 
     // generate random password
     for(let i = 1; i<= length ; i++){
-      let char = Math.floor(Math.random()* str.lenght +1)
-      pass = str.charAt(char)
+      let char = Math.floor(Math.random()* str.length +1)
+      pass += str.charAt(char)
 
     }
 
@@ -30,7 +30,7 @@ function App() {
   useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed, passwordGenerator])
 
   return (
-    <>
+    
         <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-29 my-15 text-orange-700 bg-green-600 text-center my-4'> 
           <h1>Password Generator</h1>
           <div className='flex shadow rounded-lg overflow-hidden mb-4' > <input type= "Text "
@@ -46,7 +46,7 @@ function App() {
               <input
               type='range'
               min={6}
-              max={100}
+              max={20}
               value={length} 
               className='cursor-pointer'
               onChange={(e)=>{setLenght(e.target.value)}}
@@ -63,15 +63,31 @@ function App() {
                 setNumberAllowed((prev)=>!prev)
               }}
               
-              className='cursor-pointer'
-              onChange={(e)=>{setLenght(e.target.value)}}
+              // className='cursor-pointer'
+              // onChange={(e)=>{setNumber(e.target.value)}}
               />
-              <label >Numbers: {Number}</label>
+              <label htmlFor='numberInput' >Numbers:</label>
             </div>
+             <div className='flex items-center gap-x-1 '>
+              <input
+              type='checkbox'
+              
+              defaultChecked = {charAllowed}
+              id='characterInput'
+              onChange={()=>{
+                setCharAllowed((prev)=>!prev)
+              }}
+              
+              // className='cursor-pointer'
+              // onChange={(e)=>{setLenght(e.target.value)}}
+              />
+              <label htmlFor='characterInput'>Characters{charAllowed}</label>
+            </div>
+            
           </div>
           
         </div>
-    </>
+    
   )
 }
 
