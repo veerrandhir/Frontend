@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     if(charAllowed) str += "!@#$%^&*()"
 
     // generate random password
-    for(let i = 1; i<= array.length ; i++){
+    for(let i = 1; i<= length ; i++){
       let char = Math.floor(Math.random()* str.lenght +1)
       pass = str.charAt(char)
 
@@ -26,6 +26,8 @@ function App() {
     setPassword(pass) // pass password generated
 
   }, [length, numberAllowed, charAllowed, setPassword])
+
+  useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed, passwordGenerator])
 
   return (
     <>
@@ -38,6 +40,34 @@ function App() {
           readOnly />
           <button className='text-lg bg-blue-500'>Copy</button>
           
+          </div>
+          <div className='flex text-sm gap-x-2'>
+            <div className='flex items-center gap-x-1'>
+              <input
+              type='range'
+              min={6}
+              max={100}
+              value={length} 
+              className='cursor-pointer'
+              onChange={(e)=>{setLenght(e.target.value)}}
+              />
+              <label >Length: {length}</label>
+            </div>
+            <div className='flex items-center gap-x-1 '>
+              <input
+              type='checkbox'
+              
+              defaultChecked = {numberAllowed}
+              id='numberInput'
+              onChange={()=>{
+                setNumberAllowed((prev)=>!prev)
+              }}
+              
+              className='cursor-pointer'
+              onChange={(e)=>{setLenght(e.target.value)}}
+              />
+              <label >Numbers: {Number}</label>
+            </div>
           </div>
           
         </div>
