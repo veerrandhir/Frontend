@@ -29,8 +29,17 @@ function App() {
 
   return (
     <>
-        <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-700 bg-green-600 '> 
-          <div className='flex-shadow rounded-lg overflow-hidden mb-4' > <input type= "Text "/></div>
+        <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-29 my-15 text-orange-700 bg-green-600 text-center my-4'> 
+          <h1>Password Generator</h1>
+          <div className='flex shadow rounded-lg overflow-hidden mb-4' > <input type= "Text "
+          value={password}
+          className='outline-none w-full py-1 px-3'
+          placeholder='Password'
+          readOnly />
+          <button className='text-lg bg-blue-500'>Copy</button>
+          
+          </div>
+          
         </div>
     </>
   )
