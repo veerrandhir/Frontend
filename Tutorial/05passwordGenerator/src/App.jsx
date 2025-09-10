@@ -12,7 +12,7 @@ function App() {
 
   const passwordGenerator = useCallback(()=>{
     let pass = "";
-    let <strong></strong> = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
+    let str = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
     if(numberAllowed) str += "1234567890";
     if(charAllowed) str += "!@#$%^&*()"
 
@@ -20,15 +20,18 @@ function App() {
     for(let i = 1; i<= array.length ; i++){
       let char = Math.floor(Math.random()* str.lenght +1)
       pass = str.charAt(char)
-      
+
     }
+
+    setPassword(pass) // pass password generated
+
   }, [length, numberAllowed, charAllowed, setPassword])
 
   return (
     <>
-        <h1 className="text-center  text-4xl text-white bg-green-500" >
-      Password Generator
-    </h1>
+        <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-700 bg-green-600 '> 
+          <div className='flex-shadow rounded-lg overflow-hidden mb-4' > <input type= "Text "/></div>
+        </div>
     </>
   )
 }
