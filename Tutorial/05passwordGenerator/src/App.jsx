@@ -89,7 +89,7 @@ function App() {
               
               defaultChecked = {charAllowed}
               id='characterInput'
-              onChange={(e)=>{
+              onChange={()=>{
                 setCharAllowed((prev)=>!prev)
               }}
               
