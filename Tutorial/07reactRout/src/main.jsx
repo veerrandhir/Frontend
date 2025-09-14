@@ -1,13 +1,15 @@
 import { StrictMode } from "react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserrRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import Layout from "./components/Layout.jsx";
 import { Children } from "react";
+import Home from "./components/Home/Home.jsx";
+import About from "./components/About/About.jsx";
 
-const router = createBrowserrRouter([
+const router = createBrowserRouter([
   { path: "/", 
     element: <Layout />,
     Children: [{
