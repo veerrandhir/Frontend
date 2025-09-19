@@ -5,13 +5,15 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const {setUser} = useContext(UserContext)
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
-    e.preventDefault() // when we submit passowrd
-    setUser({username, password})
+    e.preventDefault();
+    {
+      /* when we submit passowrd*/
+    }
+    setUser({ username, password });
   };
-
 
   return (
     <div>
@@ -22,6 +24,7 @@ export default function Login() {
         onChange={(e) => setUsername(e.target.value)}
         placeholder="username"
       />
+      {"   "}
       <input
         type="text"
         value={password}
