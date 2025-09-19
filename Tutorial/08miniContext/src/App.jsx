@@ -1,14 +1,21 @@
 // import { useState } from 'react'
-import './App.css'
-import UserContextProvider from './context/userContextProvider'
+import "./App.css";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import UserContextProvider from "./context/userContextProvider";
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <UserContextProvider> // Now whatever component we have direct access through it
-    <h1>Mini project</h1>
-    </UserContextProvider>)
+    <UserContextProvider>
+      {" "}
+      {/* Now whatever component we have direct access through it */}
+      <h1>Mini project</h1>
+      <Login />
+      <Profile />
+    </UserContextProvider>
+  );
 }
 
-export default App
+export default App;
