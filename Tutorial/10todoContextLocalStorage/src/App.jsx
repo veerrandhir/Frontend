@@ -26,7 +26,19 @@ function App() {
     );
   };
 
-  const toggleComplete = () => {};
+  const toggleComplete = (id) => {
+    setTodos((prev) =>
+      prev.map((prevTodo) =>
+        prevTodo === id
+          ? { ...prevTodo, completed: !prevTodo.completed }
+          : prevTodo
+      )
+    );
+  };
+  {
+    /*This fn simply access complete : false ? true : false and return  
+    we will loop in each value and find our id is id match then to access its values it is a object so we use spread operator and update value*/
+  }
 
   return (
     <TodoProvider
