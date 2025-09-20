@@ -11,7 +11,14 @@ function App() {
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
-  const deleteTodo = () => {};
+  const deleteTodo = (id) => {
+    setTodos((prev) => {
+      prev.filter((todo) => todo.id !== id);
+    });
+    {
+      /*We use filter in place of map bacause we want to remove that id which match our id only and then we need remaining array  */
+    }
+  };
 
   const updateTodo = (id, todo) => {
     setTodos((prev) =>
