@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 
 import { TodoProvider } from "./contexts";
+import { useEffect } from "react";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -39,6 +40,25 @@ function App() {
     /*This fn simply access complete : false ? true : false and return  
     we will loop in each value and find our id is id match then to access its values it is a object so we use spread operator and update value*/
   }
+
+  {
+    /* Local Storage 
+    When we open app the fn which may relode the app : useEffect 
+    Actully we while relod or opening app we need our prev date 
+     */
+  }
+
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+
+    if (todos && todos.length > 0) {
+      setTodos(todos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  });
 
   return (
     <TodoProvider
