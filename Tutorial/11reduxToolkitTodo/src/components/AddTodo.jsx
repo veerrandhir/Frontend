@@ -1,6 +1,11 @@
 import React from "react";
+import useDispatch from "react-redux";
 
 function AddTodo() {
+  const [input, setInput] = React.useState("");
+
+  const dispatch = useDispatch();
+
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
