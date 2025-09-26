@@ -19,17 +19,16 @@ function Signup() {
   const create = async (data) => {
     setError("");
 
-    if (userData) {
+    try {
       const userData = await authService.createAccount(data);
-
-      try {
+      if (userData) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(login(userData));
 
         navigate("/");
-      } catch (error) {
-        setError(error.message);
       }
+    } catch (error) {
+      setError(error.message);
     }
   };
 
@@ -96,5 +95,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;
