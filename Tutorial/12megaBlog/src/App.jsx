@@ -26,8 +26,14 @@ function App() {
           dispatch(logout());
         }
       })
-      .finally(() => setLoading(false)); // in place of catch we had used finally to setLoading false so that loading icon won't show after any other page open
-  }, []); // dependency array
+      .finally(() => setLoading(false));
+    {
+      /*// in place of catch we had used finally to setLoading false so that loading icon won't show after any other page open */
+    }
+  }, []);
+  {
+    /* // dependency array */
+  }
 
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
