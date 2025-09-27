@@ -13,7 +13,7 @@ import Login from "../pages/Login.jsx";
 import PostForm from "./post-form/PostForm.jsx";
 import Post from "../pages/Post.jsx";
 
-import Container from "./Container.jsx"; // Problem my arise
+import Container from "../components/container/Container.jsx"; // Problem my arise
 import PostCard from "./PostCard.jsx";
 import AuthLayout from "./AuthLayout.jsx";
 
