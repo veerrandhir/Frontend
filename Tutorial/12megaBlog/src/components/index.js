@@ -15,6 +15,7 @@ import Post from "../pages/Post.jsx";
 
 import Container from "./Container.jsx"; // Problem my arise
 import PostCard from "./PostCard.jsx";
+import AuthLayout from "./AuthLayout.jsx";
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   Post,
   Container,
   PostCard,
+  AuthLayout,
 };
