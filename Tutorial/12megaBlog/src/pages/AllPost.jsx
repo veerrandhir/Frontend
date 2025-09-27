@@ -11,7 +11,11 @@ function AllPost() {
 
   useEffect(() => {}, []);
 
-  appwriteService.getPosts([]).then((posts) => setPosts(posts));
+  appwriteService.getPosts([]).then((posts) => {
+    if (posts) {
+      setPosts(posts.documents);
+    }
+  });
 
   return <div>AllPost</div>;
 }
