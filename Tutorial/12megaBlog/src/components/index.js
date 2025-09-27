@@ -10,4 +10,7 @@ import Signup from "./Signup.jsx";
 
 import Login from "../pages/Login.jsx";
 
-export { Header, Footer, Logo, LogoutBtn, RTE, Signup, Login };
+import PostForm from "./post-form/PostForm.jsx";
+import Post from "../pages/Post.jsx";
+
+export { Header, Footer, Logo, LogoutBtn, RTE, Signup, Login, PostForm, Post };
