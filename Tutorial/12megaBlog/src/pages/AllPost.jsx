@@ -7,6 +7,12 @@ import { Container, PostCard } from "../components/index.js";
 import appwriteService from "../appwrite/config.js";
 
 function AllPost() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {}, []);
+
+  appwriteService.getPosts([]).then((posts) => setPosts(posts));
+
   return <div>AllPost</div>;
 }
 
