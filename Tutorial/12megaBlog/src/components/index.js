@@ -13,4 +13,19 @@ import Login from "../pages/Login.jsx";
 import PostForm from "./post-form/PostForm.jsx";
 import Post from "../pages/Post.jsx";
 
-export { Header, Footer, Logo, LogoutBtn, RTE, Signup, Login, PostForm, Post };
+import Container from "./Container.jsx"; // Problem my arise
+import PostCard from "./PostCard.jsx";
+
+export {
+  Header,
+  Footer,
+  Logo,
+  LogoutBtn,
+  RTE,
+  Signup,
+  Login,
+  PostForm,
+  Post,
+  Container,
+  PostCard,
+};
