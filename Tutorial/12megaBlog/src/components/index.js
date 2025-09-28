@@ -14,12 +14,18 @@ import Login from "../pages/Login.jsx";
 import PostForm from "./post-form/PostForm.jsx";
 import Post from "../pages/Post.jsx";
 
-import Container from "../components/container/Container.jsx"; // Problem my arise
+import Container from "../components/container/Container.jsx";
 import PostCard from "./PostCard.jsx";
 import AuthLayout from "./AuthLayout.jsx";
 
 import Input from "./Input.jsx";
+import Select from "../components/Select.jsx";
 
+import Home from "../pages/Home.jsx";
+import AddPost from "../pages/AddPost.jsx";
+
+import AllPost from "../pages/AllPost.jsx";
+import EditPost from "../pages/EditPost.jsx";
 export {
   Header,
   Footer,
@@ -35,4 +41,9 @@ export {
   AuthLayout,
   Button,
   Input,
+  Select,
+  Home,
+  AddPost,
+  AllPost,
+  EditPost,
 };
