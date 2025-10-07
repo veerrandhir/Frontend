@@ -1,3 +1,4 @@
+/*
 const http = require("http");
 
 const server = http.createServer((req, res) => {
@@ -23,4 +24,23 @@ const server = http.createServer((req, res) => {
 
 server.listen(4000, () => {
   console.log("Server is serving on port 4000");
+});
+*/
+// secure server using https
+
+const https = require("https");
+const fs = require("fs");
+
+const options = {
+  key: fs.readFileSync("key.pem"),
+  cert: fs.readFileSync("cert.pem"),
+};
+
+const server = https.createServer(options, (req, res) => {
+  res.writeHead(200);
+  res.end("Secure server");
+});
+
+server.listen(4000, () => {
+  console.log("HTTPS server running on port 4000");
 });
