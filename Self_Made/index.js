@@ -1,27 +1,26 @@
-// Self made project on which I have to work
+const http = require("http");
 
+const server = http.createServer((req, res) => {
+  console.log("Server started");
 
-// let's create a http server
+  // Basic routing
+  switch (req.url) {
+    case "/":
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("Welcome to the home page");
+      break;
 
-const https =  require "https"
+    case "/about":
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("This is the about page");
+      break;
 
+    default:
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("Page not found");
+  }
+});
 
-const createServer = https.createServer((req , res)=> console.log('server started')
-)
-
-createServer.listen(4000, ()=>{
-    console.log("server is serving");
-    
-
-})
-
-req.url(
-    switch (url) {
-        case value:
-            
-            break;
-    
-        default:
-            break;
-    }
-)
+server.listen(4000, () => {
+  console.log("Server is serving on port 4000");
+});
